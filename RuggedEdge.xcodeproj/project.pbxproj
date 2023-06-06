@@ -14,6 +14,10 @@
 		9D02ECC92A2F86F000668C7C /* RuggedEdgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02ECC82A2F86F000668C7C /* RuggedEdgeTests.swift */; };
 		9D02ECD32A2F86F000668C7C /* RuggedEdgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02ECD22A2F86F000668C7C /* RuggedEdgeUITests.swift */; };
 		9D02ECD52A2F86F000668C7C /* RuggedEdgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D02ECD42A2F86F000668C7C /* RuggedEdgeUITestsLaunchTests.swift */; };
+		9D02ECE22A2F87F300668C7C /* edgeOne.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE12A2F87F300668C7C /* edgeOne.usdz */; };
+		9D02ECE62A2F888A00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
+		9D02ECE72A2F888D00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
+		9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,9 @@
 		9D02ECCE2A2F86F000668C7C /* RuggedEdgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuggedEdgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D02ECD22A2F86F000668C7C /* RuggedEdgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuggedEdgeUITests.swift; sourceTree = "<group>"; };
 		9D02ECD42A2F86F000668C7C /* RuggedEdgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuggedEdgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9D02ECE12A2F87F300668C7C /* edgeOne.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = edgeOne.usdz; sourceTree = "<group>"; };
+		9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		9D02ECE92A2F8BF900668C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +101,9 @@
 		9D02ECB62A2F86EF00668C7C /* RuggedEdge */ = {
 			isa = PBXGroup;
 			children = (
+				9D02ECE92A2F8BF900668C7C /* Info.plist */,
+				9D02ECE12A2F87F300668C7C /* edgeOne.usdz */,
+				9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */,
 				9D02ECB72A2F86EF00668C7C /* RuggedEdgeApp.swift */,
 				9D02ECB92A2F86EF00668C7C /* ContentView.swift */,
 				9D02ECBB2A2F86F000668C7C /* Assets.xcassets */,
@@ -231,6 +241,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D02ECE62A2F888A00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */,
+				9D02ECE22A2F87F300668C7C /* edgeOne.usdz in Resources */,
 				9D02ECBF2A2F86F000668C7C /* Preview Assets.xcassets in Resources */,
 				9D02ECBC2A2F86F000668C7C /* Assets.xcassets in Resources */,
 			);
@@ -240,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D02ECE72A2F888D00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +434,7 @@
 				DEVELOPMENT_TEAM = 7GT54AP88L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RuggedEdge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +464,7 @@
 				DEVELOPMENT_TEAM = 7GT54AP88L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RuggedEdge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
