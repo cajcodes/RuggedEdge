@@ -11,43 +11,51 @@ struct Card: Identifiable {
     var action: (() -> Void)?
 }
 
-struct ARQuickLookView: UIViewControllerRepresentable {
-    var allowScaling: Bool
+class ARQuickLookViewController: UIViewController, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
     var resourceName: String
+    var allowScaling: Bool
+    var hasPresentedQuickLook = false  // New property
 
-    func makeUIViewController(context: Context) -> QLPreviewController {
-        let controller = QLPreviewController()
-        controller.dataSource = context.coordinator
-        return controller
+    init(resourceName: String, allowScaling: Bool) {
+        self.resourceName = resourceName
+        self.allowScaling = allowScaling
+        super.init(nibName: nil, bundle: nil)
     }
 
-    func updateUIViewController(_ uiViewController: QLPreviewController, context: Context) {}
-
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
-    class Coordinator: NSObject, QLPreviewControllerDataSource {
-        var parent: ARQuickLookView
-
-        init(_ parent: ARQuickLookView) {
-            self.parent = parent
-            super.init()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !hasPresentedQuickLook {
+            let previewController = QLPreviewController()
+            previewController.dataSource = self
+            previewController.delegate = self
+            present(previewController, animated: true, completion: nil)
+            
+            hasPresentedQuickLook = true  // Update the property
         }
+    }
 
-        func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-            return 1
-        }
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
 
-        func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-            guard let path = Bundle.main.path(forResource: parent.resourceName, ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
-            let url = URL(fileURLWithPath: path)
-            let item = ARQuickLookPreviewItem(fileAt: url)
-            item.allowsContentScaling = parent.allowScaling
-            return item
-        }
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: "usdz") else { fatalError("Couldn't find the supported input file.") }
+        let url = URL(fileURLWithPath: path)
+        let item = ARQuickLookPreviewItem(fileAt: url)
+        item.allowsContentScaling = allowScaling
+        return item
+    }
+    
+    func previewControllerDidDismiss(_ controller: QLPreviewController) {
+        dismiss(animated: true, completion: nil)
     }
 }
+
 
 struct ContentView: View {
     var cards: [Card]
@@ -62,21 +70,8 @@ struct ContentView: View {
         cards[0].action = {
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let window = windowScene.windows.first {
-                window.rootViewController?.present(
-                    UIHostingController(rootView:
-                        VStack {
-                            HStack {
-                                Button("Close") {
-                                    window.rootViewController?.dismiss(animated: true, completion: nil)
-                                }
-                                Spacer()
-                            }
-                            .padding()
-                            ARQuickLookView(allowScaling: true, resourceName: "RuggedDevice3")
-                        }
-                    ),
-                    animated: true, completion: nil
-                )
+                let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedDevice3", allowScaling: true)
+                window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
             }
         }
     }
