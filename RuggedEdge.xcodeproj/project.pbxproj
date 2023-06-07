@@ -18,6 +18,7 @@
 		9D02ECE72A2F888D00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D02ECEB2A2FDAE900668C7C /* RuggedDevice.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECEA2A2FDAE900668C7C /* RuggedDevice.usdz */; };
+		9DAF00F32A30EB6C00C19BD4 /* RuggedDevice3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF00F22A30EB6C00C19BD4 /* RuggedDevice3.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		9D02ECE92A2F8BF900668C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D02ECEA2A2FDAE900668C7C /* RuggedDevice.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice.usdz; sourceTree = "<group>"; };
+		9DAF00F22A30EB6C00C19BD4 /* RuggedDevice3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice3.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9D02ECE92A2F8BF900668C7C /* Info.plist */,
+				9DAF00F22A30EB6C00C19BD4 /* RuggedDevice3.usdz */,
 				9D02ECEA2A2FDAE900668C7C /* RuggedDevice.usdz */,
 				9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */,
 				9D02ECB72A2F86EF00668C7C /* RuggedEdgeApp.swift */,
@@ -201,7 +204,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					9D02ECB32A2F86EF00668C7C = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -245,6 +248,7 @@
 				9D02ECE62A2F888A00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */,
 				9D02ECBF2A2F86F000668C7C /* Preview Assets.xcassets in Resources */,
 				9D02ECBC2A2F86F000668C7C /* Assets.xcassets in Resources */,
+				9DAF00F32A30EB6C00C19BD4 /* RuggedDevice3.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -345,6 +350,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -373,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -405,6 +412,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

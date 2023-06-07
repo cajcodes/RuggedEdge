@@ -8,7 +8,7 @@ struct Card: Identifiable {
     var title: String
     var imageName: String
     var subtitle: String
-    var action: () -> Void
+    var action: (() -> Void)?
 }
 
 struct ARQuickLookView: UIViewControllerRepresentable {
@@ -50,15 +50,39 @@ struct ARQuickLookView: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-    var cards = [
-        Card(title: "EdgeOne", imageName: "RuggedDevice", subtitle: "View in AR", action: { /* ARQuickLookView(allowScaling: true, resourceName: "RuggedDevice.usdz").present() */ }),
-        Card(title: "Helpdesk", imageName: "RuggedHelpdesk", subtitle: "Coming Soon", action: {}),
-        Card(title: "Website", imageName: "RuggedSite", subtitle: "Visit our website", action: { UIApplication.shared.open(URL(string: "https://www.ruggededge.ai")!) })
-    ]
+    var cards: [Card]
+
+    init() {
+        cards = [
+            Card(title: "EdgeOne", imageName: "RuggedDevice", subtitle: "View in AR", action: {}),
+            Card(title: "Helpdesk", imageName: "RuggedHelpdesk", subtitle: "Coming Soon", action: {}),
+            Card(title: "Website", imageName: "RuggedSite", subtitle: "Visit our website", action: { UIApplication.shared.open(URL(string: "https://www.ruggededge.ai")!) })
+        ]
+
+        cards[0].action = {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController?.present(
+                    UIHostingController(rootView:
+                        VStack {
+                            HStack {
+                                Button("Close") {
+                                    window.rootViewController?.dismiss(animated: true, completion: nil)
+                                }
+                                Spacer()
+                            }
+                            .padding()
+                            ARQuickLookView(allowScaling: true, resourceName: "RuggedDevice3")
+                        }
+                    ),
+                    animated: true, completion: nil
+                )
+            }
+        }
+    }
 
     var body: some View {
         VStack {
-            // Spacer to push content down
             Spacer()
                 .frame(height: UIScreen.main.bounds.height * 0.05)
 
@@ -88,10 +112,10 @@ struct ContentView: View {
                         CardView(card: card)
                     }
                 }
-                .padding(.horizontal, 10) // Adjust this value to set the amount of blue background visible on each side of the cards
+                .padding(.horizontal, 10)
             }
         }
-        .padding(0) // Remove padding from VStack
+        .padding(0)
         .background(Color(red: 26/255, green: 36/255, blue: 51/255))
         .edgesIgnoringSafeArea(.all)
     }
@@ -101,22 +125,20 @@ struct CardView: View {
     var card: Card
     
     var body: some View {
-        Button(action: card.action) {
-            VStack {
-                Image(card.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: 200)
-                    .clipped()
-                
-                Text(card.title)
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
-                    .foregroundColor(Color(red: 26/255, green: 36/255, blue: 51/255))
-                
-                Text(card.subtitle)
-                    .font(.subheadline)
-                    .foregroundColor(Color(red: 240/255, green: 83/255, blue: 35/255))
-            }
+        VStack {
+            Image(card.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 200)
+                .clipped()
+            
+            Text(card.title)
+                .font(.system(size: 24, weight: .bold, design: .rounded))
+                .foregroundColor(Color(red: 26/255, green: 36/255, blue: 51/255))
+            
+            Text(card.subtitle)
+                .font(.subheadline)
+                .foregroundColor(Color(red: 240/255, green: 83/255, blue: 35/255))
         }
         .padding()
         .background(
@@ -124,6 +146,9 @@ struct CardView: View {
         )
         .cornerRadius(20)
         .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 10)
+        .onTapGesture {
+            card.action?()
+        }
     }
 }
 
