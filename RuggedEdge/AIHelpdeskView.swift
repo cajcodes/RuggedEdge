@@ -3,7 +3,7 @@ import SwiftUI
 struct AIHelpdeskView: View {
     @State private var userInput: String = ""
     @State private var isHelpbotTyping: Bool = false
-    @State private var messages: [(String, Bool)] = [( "Welcome to Rugged Edge Helpdesk! We provide intrinsically safe mobile connectivity to the industrial worker. Feel free to ask me anything about our products and services.", false)] // (message, isUserMessage)
+    @State private var messages: [(String, Bool)] = [( "Welcome to the RuggedEdge Helpdesk! We provide intrinsically safe mobile connectivity to the industrial worker. Feel free to ask me anything about our products and services.", false)] // (message, isUserMessage)
     @State private var conversationHistory: [[String: Any]] = [["role": "system", "content": "You're a courteous AI helpdesk in RuggedEdge app, once ConnectIt Technologies. We offer safe mobile connectivity for industrial workers, enabling access to vital resources in hazardous areas. We're releasing two 5G devices, EdgeOne and Edge2, viewable in AR on the app and at ruggededge.ai. For unknown queries, suggest contacting us via phone or email above the chat, or visiting the website. More info and announcements coming soon."]] // Initialize conversation history with system message
     
     var body: some View {
