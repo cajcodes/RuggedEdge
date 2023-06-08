@@ -17,8 +17,8 @@
 		9D02ECE62A2F888A00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D02ECE72A2F888D00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
-		9D2ACB282A3128A600CDC124 /* RuggedDevice5.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */; };
-		9D997F872A32360000523FAB /* RuggedDevice6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D997F862A32360000523FAB /* RuggedDevice6.usdz */; };
+		9D997F8A2A323F0100523FAB /* RuggedYellow.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D997F882A323F0000523FAB /* RuggedYellow.usdz */; };
+		9D997F8B2A323F0100523FAB /* RuggedRed.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D997F892A323F0100523FAB /* RuggedRed.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		9D02ECD42A2F86F000668C7C /* RuggedEdgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuggedEdgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		9D02ECE92A2F8BF900668C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice5.usdz; sourceTree = "<group>"; };
-		9D997F862A32360000523FAB /* RuggedDevice6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice6.usdz; sourceTree = "<group>"; };
+		9D997F882A323F0000523FAB /* RuggedYellow.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedYellow.usdz; sourceTree = "<group>"; };
+		9D997F892A323F0100523FAB /* RuggedRed.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedRed.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				9D02ECE92A2F8BF900668C7C /* Info.plist */,
-				9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */,
-				9D997F862A32360000523FAB /* RuggedDevice6.usdz */,
+				9D997F892A323F0100523FAB /* RuggedRed.usdz */,
+				9D997F882A323F0000523FAB /* RuggedYellow.usdz */,
 				9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */,
 				9D02ECB72A2F86EF00668C7C /* RuggedEdgeApp.swift */,
 				9D02ECB92A2F86EF00668C7C /* ContentView.swift */,
@@ -245,10 +245,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D02ECE62A2F888A00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */,
+				9D997F8B2A323F0100523FAB /* RuggedRed.usdz in Resources */,
 				9D02ECBF2A2F86F000668C7C /* Preview Assets.xcassets in Resources */,
 				9D02ECBC2A2F86F000668C7C /* Assets.xcassets in Resources */,
-				9D2ACB282A3128A600CDC124 /* RuggedDevice5.usdz in Resources */,
-				9D997F872A32360000523FAB /* RuggedDevice6.usdz in Resources */,
+				9D997F8A2A323F0100523FAB /* RuggedYellow.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
