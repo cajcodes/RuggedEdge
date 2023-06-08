@@ -63,18 +63,29 @@ struct ContentView: View {
     init() {
         cards = [
             Card(title: "EdgeOne", imageName: "EdgeOneDevice", subtitle: "View in AR", action: {}),
+            Card(title: "EdgeTwo", imageName: "EdgeTwoDevice", subtitle: "View in AR", action: {}), // New card for EdgeTwo
             Card(title: "Helpdesk", imageName: "RuggedHelpdesk", subtitle: "Coming Soon", action: {}),
             Card(title: "Website", imageName: "RuggedSite", subtitle: "Visit our website", action: { UIApplication.shared.open(URL(string: "https://www.ruggededge.ai")!) })
         ]
 
-        cards[0].action = {
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-               let window = windowScene.windows.first {
-                let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedDevice5", allowScaling: true)
-                window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
-            }
+    // EdgeOne Action
+    cards[0].action = {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedDevice5", allowScaling: true)
+            window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
         }
     }
+    
+    // EdgeTwo Action (for RuggedDevice6)
+    cards[1].action = {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedDevice6", allowScaling: true) // Change resourceName to RuggedDevice6
+            window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
+        }
+    }
+}
 
     var body: some View {
         VStack {
@@ -123,8 +134,8 @@ struct CardView: View {
         VStack {
             Image(card.imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: 200)
+                .aspectRatio(contentMode: .fit)
+                .frame(maxHeight: 200)
                 .clipped()
             
             Text(card.title)

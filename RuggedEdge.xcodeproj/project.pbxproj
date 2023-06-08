@@ -18,6 +18,7 @@
 		9D02ECE72A2F888D00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D2ACB282A3128A600CDC124 /* RuggedDevice5.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */; };
+		9D997F872A32360000523FAB /* RuggedDevice6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D997F862A32360000523FAB /* RuggedDevice6.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		9D02ECE92A2F8BF900668C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice5.usdz; sourceTree = "<group>"; };
+		9D997F862A32360000523FAB /* RuggedDevice6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice6.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				9D02ECE92A2F8BF900668C7C /* Info.plist */,
 				9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */,
+				9D997F862A32360000523FAB /* RuggedDevice6.usdz */,
 				9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */,
 				9D02ECB72A2F86EF00668C7C /* RuggedEdgeApp.swift */,
 				9D02ECB92A2F86EF00668C7C /* ContentView.swift */,
@@ -245,6 +248,7 @@
 				9D02ECBF2A2F86F000668C7C /* Preview Assets.xcassets in Resources */,
 				9D02ECBC2A2F86F000668C7C /* Assets.xcassets in Resources */,
 				9D2ACB282A3128A600CDC124 /* RuggedDevice5.usdz in Resources */,
+				9D997F872A32360000523FAB /* RuggedDevice6.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
