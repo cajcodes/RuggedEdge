@@ -19,6 +19,7 @@
 		9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D41A4222A32649B00474B43 /* RuggedRed.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D41A4212A32649B00474B43 /* RuggedRed.usdz */; };
 		9D41A4242A3264C300474B43 /* RuggedYellow.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D41A4232A3264C300474B43 /* RuggedYellow.usdz */; };
+		9DD646972A326DC700956122 /* AIHelpdeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD646962A326DC700956122 /* AIHelpdeskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9D02ECE92A2F8BF900668C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D41A4212A32649B00474B43 /* RuggedRed.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedRed.usdz; sourceTree = "<group>"; };
 		9D41A4232A3264C300474B43 /* RuggedYellow.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedYellow.usdz; sourceTree = "<group>"; };
+		9DD646962A326DC700956122 /* AIHelpdeskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIHelpdeskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				9D41A4232A3264C300474B43 /* RuggedYellow.usdz */,
 				9D02ECB72A2F86EF00668C7C /* RuggedEdgeApp.swift */,
 				9D02ECB92A2F86EF00668C7C /* ContentView.swift */,
+				9DD646962A326DC700956122 /* AIHelpdeskView.swift */,
 				9D02ECBB2A2F86F000668C7C /* Assets.xcassets */,
 				9D02ECBD2A2F86F000668C7C /* Preview Content */,
 			);
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD646972A326DC700956122 /* AIHelpdeskView.swift in Sources */,
 				9D02ECBA2A2F86EF00668C7C /* ContentView.swift in Sources */,
 				9D02ECB82A2F86EF00668C7C /* RuggedEdgeApp.swift in Sources */,
 			);

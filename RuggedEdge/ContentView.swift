@@ -64,7 +64,7 @@ struct ContentView: View {
         cards = [
             Card(title: "EdgeOne", imageName: "EdgeOneDevice", subtitle: "View in AR", action: {}),
             Card(title: "EdgeTwo", imageName: "EdgeTwoDevice", subtitle: "View in AR", action: {}), // New card for EdgeTwo
-            Card(title: "Helpdesk", imageName: "RuggedHelpdesk", subtitle: "Coming Soon", action: {}),
+            Card(title: "Helpdesk", imageName: "RuggedHelpdesk", subtitle: "Chat now", action: {}),
             Card(title: "Website", imageName: "RuggedSite", subtitle: "Visit our website", action: { UIApplication.shared.open(URL(string: "https://www.ruggededge.ai")!) })
         ]
 
@@ -85,6 +85,14 @@ struct ContentView: View {
             window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
         }
     }
+        // In your ContentView's init()
+        cards[2].action = {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                let aiHelpdeskView = UIHostingController(rootView: AIHelpdeskView())
+                window.rootViewController?.present(aiHelpdeskView, animated: true, completion: nil)
+            }
+        }
 }
 
     var body: some View {
