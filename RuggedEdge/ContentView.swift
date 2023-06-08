@@ -62,7 +62,7 @@ struct ContentView: View {
 
     init() {
         cards = [
-            Card(title: "EdgeOne", imageName: "RuggedDevice", subtitle: "View in AR", action: {}),
+            Card(title: "EdgeOne", imageName: "EdgeOneDevice", subtitle: "View in AR", action: {}),
             Card(title: "Helpdesk", imageName: "RuggedHelpdesk", subtitle: "Coming Soon", action: {}),
             Card(title: "Website", imageName: "RuggedSite", subtitle: "Visit our website", action: { UIApplication.shared.open(URL(string: "https://www.ruggededge.ai")!) })
         ]
@@ -70,7 +70,7 @@ struct ContentView: View {
         cards[0].action = {
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let window = windowScene.windows.first {
-                let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedDevice3", allowScaling: true)
+                let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedDevice5", allowScaling: true)
                 window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
             }
         }
@@ -136,9 +136,8 @@ struct CardView: View {
                 .foregroundColor(Color(red: 240/255, green: 83/255, blue: 35/255))
         }
         .padding()
-        .background(
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.gray.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
-        )
+        .background(Color.white)
+
         .cornerRadius(20)
         .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 10)
         .onTapGesture {

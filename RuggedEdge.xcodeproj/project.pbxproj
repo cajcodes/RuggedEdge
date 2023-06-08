@@ -17,7 +17,7 @@
 		9D02ECE62A2F888A00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D02ECE72A2F888D00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
-		9DAF00F32A30EB6C00C19BD4 /* RuggedDevice3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF00F22A30EB6C00C19BD4 /* RuggedDevice3.usdz */; };
+		9D2ACB282A3128A600CDC124 /* RuggedDevice5.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		9D02ECD42A2F86F000668C7C /* RuggedEdgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuggedEdgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		9D02ECE92A2F8BF900668C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9DAF00F22A30EB6C00C19BD4 /* RuggedDevice3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice3.usdz; sourceTree = "<group>"; };
+		9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedDevice5.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				9D02ECE92A2F8BF900668C7C /* Info.plist */,
-				9DAF00F22A30EB6C00C19BD4 /* RuggedDevice3.usdz */,
+				9D2ACB272A3128A600CDC124 /* RuggedDevice5.usdz */,
 				9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */,
 				9D02ECB72A2F86EF00668C7C /* RuggedEdgeApp.swift */,
 				9D02ECB92A2F86EF00668C7C /* ContentView.swift */,
@@ -244,7 +244,7 @@
 				9D02ECE62A2F888A00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */,
 				9D02ECBF2A2F86F000668C7C /* Preview Assets.xcassets in Resources */,
 				9D02ECBC2A2F86F000668C7C /* Assets.xcassets in Resources */,
-				9DAF00F32A30EB6C00C19BD4 /* RuggedDevice3.usdz in Resources */,
+				9D2ACB282A3128A600CDC124 /* RuggedDevice5.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +448,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.ruggededge.RuggedEdge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -478,7 +478,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.ruggededge.RuggedEdge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
