@@ -72,7 +72,7 @@ struct ContentView: View {
     cards[0].action = {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
-            let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedRed", allowScaling: true)
+            let arQuickLookVC = ARQuickLookViewController(resourceName: "edgeOne2", allowScaling: true)
             window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
         }
     }
@@ -81,7 +81,7 @@ struct ContentView: View {
     cards[1].action = {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
-            let arQuickLookVC = ARQuickLookViewController(resourceName: "RuggedYellow", allowScaling: true) // Change resourceName to RuggedDevice6
+            let arQuickLookVC = ARQuickLookViewController(resourceName: "edgeTwo2", allowScaling: true) // Change resourceName to RuggedDevice6
             window.rootViewController?.present(arQuickLookVC, animated: true, completion: nil)
         }
     }

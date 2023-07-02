@@ -98,8 +98,15 @@ struct AIHelpdeskView: View {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.httpBody = try? JSONSerialization.data(withJSONObject: payload)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: payload)
+            request.httpBody = jsonData
+        } catch {
+            print("Error: \(error.localizedDescription)")
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
@@ -109,6 +116,7 @@ struct AIHelpdeskView: View {
                 // Handle errors
                 if let error = error {
                     messages.append(("Error: \(error.localizedDescription)", false))
+                    print("Error in sendMessage:", error)
                     return
                 }
                 
@@ -123,7 +131,8 @@ struct AIHelpdeskView: View {
                     // Append bot message to messages array for displaying
                     messages.append((botMessage, false))
                 } else {
-                    messages.append(("Unknown error", false))
+                    messages.append(("Error: Unable to process your request.", false))
+                    print("Error: Unexpected response data")
                 }
             }
         }
