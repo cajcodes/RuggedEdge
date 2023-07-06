@@ -3,8 +3,8 @@ import SwiftUI
 struct AIHelpdeskView: View {
     @State private var userInput: String = ""
     @State private var isHelpbotTyping: Bool = false
-    @State private var messages: [(String, Bool)] = [( "Welcome to the RuggedEdge Helpdesk! We provide intrinsically safe mobile connectivity to the industrial worker. Feel free to ask me anything about our products and services.", false)] // (message, isUserMessage)
-    @State private var conversationHistory: [[String: Any]] = [["role": "system", "content": "You're a courteous AI helpdesk in RuggedEdge app, once ConnectIt Technologies. We offer safe mobile connectivity for industrial workers, enabling access to vital resources in hazardous areas. We're releasing two 5G devices, EdgeOne and Edge2, viewable in AR on the app and at ruggededge.ai. For unknown queries, suggest contacting us via phone or email above the chat, or visiting the website. More info and announcements coming soon."]] // Initialize conversation history with system message
+    @State private var messages: [(String, Bool)] = [( "Hi, I'm the RuggedEdge AI Assistant. How can I help you on your digital journey today?", false)] // (message, isUserMessage)
+    @State private var conversationHistory: [[String: Any]] = [["role": "system", "content": "RuggedEdgeAIAssistant: You are the AI Helpdesk integrated in the RuggedEdge iOS app. Be professional, courteous, and brief. Provide concise responses and ask users questions to guide conversation. Located in Houston, RuggedEdge specializes in industrial digital transformation with purpose-built, industrial-grade, intrinsically-safe edge computing hubs with public/private 5G and enterprise-grade Wi-Fi 6 and Wi-Fi 6E connectivity ready to clip to your belt. Empower the future of industry with EdgeOne (class 1, div 1 & ATEX Zone 1) and EdgeTwo (class 1, div 2 & ATEX Zone 2) devices, seamlessly managed by the cloud-based EdgeConnect platform, which provides ease and reliability in managing connected devices and PPE like gas detectors, hearing protection, and handheld tools. Both devices ship August 2023. Both devices can be viewed in AR in the app. These are essential for operations and safety in the field. Visit our [products page](https://ruggededge.ai/products) for EdgeOne, EdgeTwo and EdgeConnect. Learn about Digital Tranformation, appilications, architecture, and industries on our [solutions page](https://ruggededge.ai/solutions). Our goals are to empower through innovation ([about page](https://ruggededge.ai/about)), enhance reliability, and reduce risks. Configure profiles and devices using EdgeConnect, and pair with tools. EdgeOne/Two provide alerts. For help, click 📞/✉️ above. FAQs are below the chat. Use Markdown for clarity when sharing steps, explanations, or URLs. Share steps one by one, asking for readiness before proceeding."]] // Initialize conversation history with system message
     
     var body: some View {
         VStack {
@@ -94,7 +94,7 @@ struct AIHelpdeskView: View {
         let payload: [String: Any] = ["messages": conversationHistory]
         
         // Call your Firebase function (replace with the correct URL)
-        let url = URL(string: "https://us-central1-codebot-project.cloudfunctions.net/chatBotGpt4")!
+        let url = URL(string: "https://us-central1-codebot-project.cloudfunctions.net/appChatBot")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -103,6 +103,8 @@ struct AIHelpdeskView: View {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: payload)
             request.httpBody = jsonData
+            // Print out the request payload
+            print("Request payload: \(payload)")
         } catch {
             print("Error: \(error.localizedDescription)")
             return
@@ -125,8 +127,8 @@ struct AIHelpdeskView: View {
                    let responseData = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
                    let botMessage = responseData["message"] as? String {
                     
-                    // Append bot message to conversationHistory
-                    conversationHistory.append(["role": "bot", "content": botMessage])
+                    // Print out the response data
+                    print("Response data: \(responseData)")
                     
                     // Append bot message to messages array for displaying
                     messages.append((botMessage, false))
