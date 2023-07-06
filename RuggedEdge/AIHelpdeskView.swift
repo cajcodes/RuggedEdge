@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AIHelpdeskView: View {
+    @ObservedObject private var keyboardResponder = KeyboardResponder()
     @State private var userInput: String = ""
     @State private var isHelpbotTyping: Bool = false
     @State private var messages: [(String, Bool)] = [( "Hi, I'm the RuggedEdge AI Assistant. How can I help you on your digital journey today?", false)] // (message, isUserMessage)
@@ -18,7 +19,7 @@ struct AIHelpdeskView: View {
     
                 Button(action: {
                     // Action to contact via phone
-                    if let url = URL(string: "tel://7133764500"), UIApplication.shared.canOpenURL(url) {
+                    if let url = URL(string: "tel://13463010008"), UIApplication.shared.canOpenURL(url) {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 }) {
@@ -46,7 +47,7 @@ struct AIHelpdeskView: View {
                     ForEach(messages.indices, id: \.self) { index in
                         MessageView(message: messages[index].0, isUserMessage: messages[index].1)
                     }
-                    
+
                     if isHelpbotTyping {
                         Text("Helpbot is typing...")
                             .italic()
@@ -55,13 +56,13 @@ struct AIHelpdeskView: View {
                 }
                 .padding()
             }
-            
+
             // Input Field
             HStack {
                 TextField("Type your message here...", text: $userInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.leading)
-                
+
                 Button(action: {
                     // Add action to send message
                     sendMessage()
@@ -72,6 +73,7 @@ struct AIHelpdeskView: View {
                         .padding(.trailing)
                 }
             }
+            .padding(.bottom, keyboardResponder.currentHeight)
         }
     }
     
