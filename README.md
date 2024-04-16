@@ -26,7 +26,7 @@ The RuggedEdge iOS app showcases RuggedEdge's industrial edge computing devices 
 - Explore the app to learn more about RuggedEdge's offerings
 
 ## Credits
-- Developed by RuggedEdge
+- Developed by Christopher Jones
 - 3D models created by RuggedEdge
 - AI assistant powered by OpenAI
 
