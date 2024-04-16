@@ -25,6 +25,9 @@ The RuggedEdge iOS app showcases RuggedEdge's industrial edge computing devices 
 - Use the chat interface to ask the AI assistant questions about RuggedEdge and digital transformation
 - Explore the app to learn more about RuggedEdge's offerings
 
+## Backend Functions
+The backend logic required for this project relies on the following shared Firebase Cloud Functions: <https://github.com/cajcodes/rugged-functions>. It provides essential functionalities including integration with OpenAI's API for conversational AI capabilities utilizing their GPT models. Refer to the linked repository for detailed documentation and usage guidelines.
+
 ## Credits
 - Developed by Christopher Jones
 - 3D models created by RuggedEdge
