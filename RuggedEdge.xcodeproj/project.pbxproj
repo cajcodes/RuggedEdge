@@ -19,9 +19,9 @@
 		9D02ECE82A2F888E00668C7C /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */; };
 		9D41A4222A32649B00474B43 /* RuggedRed.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D41A4212A32649B00474B43 /* RuggedRed.usdz */; };
 		9D41A4242A3264C300474B43 /* RuggedYellow.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9D41A4232A3264C300474B43 /* RuggedYellow.usdz */; };
-		9D4970952A57504D008D41E7 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4970942A57504D008D41E7 /* KeyboardResponder.swift */; };
 		9DCD42C02A4E14DF00036724 /* edgeTwo2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9DCD42BE2A4E14DF00036724 /* edgeTwo2.usdz */; };
 		9DCD42C12A4E14DF00036724 /* edgeOne2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9DCD42BF2A4E14DF00036724 /* edgeOne2.usdz */; };
+		9DD30AE02BCF058100651CDC /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD30ADF2BCF058100651CDC /* KeyboardResponder.swift */; };
 		9DD646972A326DC700956122 /* AIHelpdeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD646962A326DC700956122 /* AIHelpdeskView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,9 +57,9 @@
 		9D02ECE92A2F8BF900668C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D41A4212A32649B00474B43 /* RuggedRed.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedRed.usdz; sourceTree = "<group>"; };
 		9D41A4232A3264C300474B43 /* RuggedYellow.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = RuggedYellow.usdz; sourceTree = "<group>"; };
-		9D4970942A57504D008D41E7 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		9DCD42BE2A4E14DF00036724 /* edgeTwo2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = edgeTwo2.usdz; sourceTree = "<group>"; };
 		9DCD42BF2A4E14DF00036724 /* edgeOne2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = edgeOne2.usdz; sourceTree = "<group>"; };
+		9DD30ADF2BCF058100651CDC /* KeyboardResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardResponder.swift; path = ../../../Desktop/KeyboardResponder.swift; sourceTree = "<group>"; };
 		9DD646962A326DC700956122 /* AIHelpdeskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIHelpdeskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,9 +115,9 @@
 				9D02ECE52A2F885E00668C7C /* Montserrat-VariableFont_wght.ttf */,
 				9D41A4212A32649B00474B43 /* RuggedRed.usdz */,
 				9D41A4232A3264C300474B43 /* RuggedYellow.usdz */,
+				9DD30ADF2BCF058100651CDC /* KeyboardResponder.swift */,
 				9DCD42BF2A4E14DF00036724 /* edgeOne2.usdz */,
 				9DCD42BE2A4E14DF00036724 /* edgeTwo2.usdz */,
-				9D4970942A57504D008D41E7 /* KeyboardResponder.swift */,
 				9D02ECB72A2F86EF00668C7C /* RuggedEdgeApp.swift */,
 				9D02ECB92A2F86EF00668C7C /* ContentView.swift */,
 				9DD646962A326DC700956122 /* AIHelpdeskView.swift */,
@@ -290,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD646972A326DC700956122 /* AIHelpdeskView.swift in Sources */,
-				9D4970952A57504D008D41E7 /* KeyboardResponder.swift in Sources */,
+				9DD30AE02BCF058100651CDC /* KeyboardResponder.swift in Sources */,
 				9D02ECBA2A2F86EF00668C7C /* ContentView.swift in Sources */,
 				9D02ECB82A2F86EF00668C7C /* RuggedEdgeApp.swift in Sources */,
 			);

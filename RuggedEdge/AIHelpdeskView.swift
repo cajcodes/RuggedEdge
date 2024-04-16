@@ -60,7 +60,9 @@ struct AIHelpdeskView: View {
             
             // Input Field
             HStack {
-                TextField("Type your message here...", text: $userInput)
+                TextField("Type your message here...", text: $userInput, onCommit: {
+                    sendMessage()
+                })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.leading)
                 
@@ -82,7 +84,7 @@ struct AIHelpdeskView: View {
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
                 let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
                 let keyboardHeight = keyboardFrame?.height ?? 0
-                bottomPadding = keyboardHeight - 275 // Adjust the value as needed
+                bottomPadding = keyboardHeight - 300 // Adjust as needed
             }
             
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
@@ -101,7 +103,9 @@ struct AIHelpdeskView: View {
         conversationHistory.append(["role": "user", "content": userInput])
         
         // Clear input
-        userInput = ""
+        DispatchQueue.main.async {
+            userInput = ""
+        }
         
         // Set isHelpbotTyping to true to show "Helpbot is typing..."
         isHelpbotTyping = true
