@@ -1,3 +1,5 @@
+![RuggedEdge Logo](/images/logo.svg)
+
 # RuggedEdge iOS App
 The RuggedEdge iOS app showcases RuggedEdge's industrial edge computing devices and provides an AI assistant to help users learn about digital transformation.
 
@@ -5,6 +7,8 @@ The RuggedEdge iOS app showcases RuggedEdge's industrial edge computing devices 
 - View 3D models of the EdgeOne and EdgeTwo devices in augmented reality
 - Chat with an AI assistant to get information about RuggedEdge's products and digital transformation solutions
 - Intuitive user interface with custom fonts
+
+![screenshots of RuggedEdge app](/images/screenshots-ruggedEdge-app.png)
 
 ## Requirements
 - iOS 14.0+
