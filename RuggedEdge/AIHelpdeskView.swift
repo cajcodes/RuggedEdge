@@ -6,48 +6,49 @@ struct AIHelpdeskView: View {
     @State private var isHelpbotTyping: Bool = false
     @State private var messages: [(String, Bool)] = [( "Hi, I'm the RuggedEdge AI Assistant. How can I help you on your digital journey today?", false)] // (message, isUserMessage)
     @State private var conversationHistory: [[String: Any]] = [["role": "system", "content": "RuggedEdgeAIAssistant: You are the AI Helpdesk integrated in the RuggedEdge iOS app. Be professional, courteous, and brief. Provide concise responses and ask users questions to guide conversation. Located in Houston, RuggedEdge specializes in industrial digital transformation with purpose-built, industrial-grade, intrinsically-safe edge computing hubs with public/private 5G and enterprise-grade Wi-Fi 6 and Wi-Fi 6E connectivity ready to clip to your belt. Empower the future of industry with EdgeOne (class 1, div 1 & ATEX Zone 1) and EdgeTwo (class 1, div 2 & ATEX Zone 2) devices, seamlessly managed by the cloud-based EdgeConnect platform, which provides ease and reliability in managing connected devices and PPE like gas detectors, hearing protection, and handheld tools. Both devices ship August 2023. Both devices can be viewed in AR in the app. These are essential for operations and safety in the field. Visit our [products page](https://ruggededge.ai/products) for EdgeOne, EdgeTwo and EdgeConnect. Learn about Digital Tranformation, appilications, architecture, and industries on our [solutions page](https://ruggededge.ai/solutions). Our goals are to empower through innovation ([about page](https://ruggededge.ai/about)), enhance reliability, and reduce risks. Configure profiles and devices using EdgeConnect, and pair with tools. EdgeOne/Two provide alerts. For help, click 📞/✉️ above. FAQs are below the chat. Use Markdown for clarity when sharing steps, explanations, or URLs. Share steps one by one, asking for readiness before proceeding."]] // Initialize conversation history with system message
-    
+    @State private var bottomPadding: CGFloat = 0
+
     var body: some View {
-        VStack {
-            // Logo and Contact Icons
-            HStack {
-                Image("logo_horizontal") // Replace "logo_horizontal" with your logo image name
-                    .resizable()
-                    .frame(width: 200, height: 20)
-    
-                Spacer()
-    
-                Button(action: {
-                    // Action to contact via phone
-                    if let url = URL(string: "tel://13463010008"), UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                }) {
-                    Image(systemName: "phone.fill")
+            VStack {
+                // Logo and Contact Icons
+                HStack {
+                    Image("logo_horizontal") // Replace "logo_horizontal" with your logo image name
                         .resizable()
-                        .frame(width: 24, height: 24)
-                }
-    
-                Button(action: {
-                    // Action to contact via mail
-                    if let url = URL(string: "mailto:vincent.higgins@ruggededge.ai"), UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        .frame(width: 200, height: 20)
+        
+                    Spacer()
+        
+                    Button(action: {
+                        // Action to contact via phone
+                        if let url = URL(string: "tel://13463010008"), UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    }) {
+                        Image(systemName: "phone.fill")
+                            .resizable()
+                            .frame(width: 24, height: 24)
                     }
-                }) {
-                    Image(systemName: "envelope.fill")
-                        .resizable()
-                        .frame(width: 28, height: 22)
+        
+                    Button(action: {
+                        // Action to contact via mail
+                        if let url = URL(string: "mailto:vincent.higgins@ruggededge.ai"), UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    }) {
+                        Image(systemName: "envelope.fill")
+                            .resizable()
+                            .frame(width: 28, height: 22)
+                    }
                 }
-            }
-            .padding()
-            
-            // Conversation Area
-            ScrollView {
+                .padding()
+                
+                // Conversation Area
+                ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(messages.indices, id: \.self) { index in
                         MessageView(message: messages[index].0, isUserMessage: messages[index].1)
                     }
-
+                    
                     if isHelpbotTyping {
                         Text("Helpbot is typing...")
                             .italic()
@@ -56,13 +57,13 @@ struct AIHelpdeskView: View {
                 }
                 .padding()
             }
-
+            
             // Input Field
             HStack {
                 TextField("Type your message here...", text: $userInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.leading)
-
+                
                 Button(action: {
                     // Add action to send message
                     sendMessage()
@@ -73,7 +74,20 @@ struct AIHelpdeskView: View {
                         .padding(.trailing)
                 }
             }
-            .padding(.bottom, keyboardResponder.currentHeight)
+            .padding(.bottom, bottomPadding)
+            .padding(.horizontal)
+        }
+        .onAppear {
+            // Add keyboard notification observers
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+                let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
+                let keyboardHeight = keyboardFrame?.height ?? 0
+                bottomPadding = keyboardHeight - 275 // Adjust the value as needed
+            }
+            
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+                bottomPadding = 0
+            }
         }
     }
     
@@ -96,7 +110,7 @@ struct AIHelpdeskView: View {
         let payload: [String: Any] = ["messages": conversationHistory]
         
         // Call your Firebase function (replace with the correct URL)
-        let url = URL(string: "https://us-central1-codebot-project.cloudfunctions.net/appChatBot")!
+        let url = URL(string: "https://us-central1-named-idiom-390417.cloudfunctions.net/chatBotGpt4")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
